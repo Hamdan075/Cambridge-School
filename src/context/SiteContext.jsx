@@ -8,7 +8,8 @@ export const SiteProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/site-data')
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+    fetch(`${API_URL}/site-data`)
       .then(res => {
         if (!res.ok) throw new Error('Failed to fetch site data');
         return res.json();
