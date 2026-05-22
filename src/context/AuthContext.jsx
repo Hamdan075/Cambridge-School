@@ -3,15 +3,9 @@ import React, { createContext, useState, useEffect } from 'react';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [isAdmin, setIsAdmin] = useState(false);
-
-  useEffect(() => {
-    // Check local storage on mount to persist session
-    const storedAuth = localStorage.getItem('isAdmin');
-    if (storedAuth === 'true') {
-      setIsAdmin(true);
-    }
-  }, []);
+  const [isAdmin, setIsAdmin] = useState(() => {
+    return localStorage.getItem('isAdmin') === 'true';
+  });
 
   const login = (email, password) => {
     if (email === 'hamdanaslam446@gmail.com' && password === 'cam@123') {
