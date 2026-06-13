@@ -231,7 +231,7 @@ const EditStudent = () => {
                   <label>Gender *</label>
                   <select 
                     {...register("gender", { required: "Gender is required" })}
-                    style={{ padding: '12px 16px', borderRadius: '10px', border: errors.gender ? '2px solid red' : '2px solid #e1e5ea', width: '100%', fontSize: '15px', fontFamily: 'Poppins, sans-serif', background: '#f8f9fb' }}
+                    style={{ padding: '12px 16px', borderRadius: '10px', border: errors.gender ? '2px solid red' : '', width: '100%', fontSize: '15px' }}
                   >
                     <option value="">Select Gender</option>
                     <option value="Male">Male</option>
@@ -321,7 +321,7 @@ const EditStudent = () => {
                   <label>English Grade</label>
                   <select 
                     {...register("gradeEnglish")}
-                    style={{ padding: '12px 16px', borderRadius: '10px', border: '2px solid #e1e5ea', width: '100%', fontSize: '15px', fontFamily: 'Poppins, sans-serif', background: '#f8f9fb' }}
+                    style={{ padding: '12px 16px', borderRadius: '10px', width: '100%', fontSize: '15px' }}
                   >
                     <option value="">Select Grade</option>
                     <option value="A+">A+</option>
@@ -339,7 +339,7 @@ const EditStudent = () => {
                   <label>Mathematics Grade</label>
                   <select 
                     {...register("gradeMaths")}
-                    style={{ padding: '12px 16px', borderRadius: '10px', border: '2px solid #e1e5ea', width: '100%', fontSize: '15px', fontFamily: 'Poppins, sans-serif', background: '#f8f9fb' }}
+                    style={{ padding: '12px 16px', borderRadius: '10px', width: '100%', fontSize: '15px' }}
                   >
                     <option value="">Select Grade</option>
                     <option value="A+">A+</option>
@@ -357,7 +357,7 @@ const EditStudent = () => {
                   <label>Science Grade</label>
                   <select 
                     {...register("gradeScience")}
-                    style={{ padding: '12px 16px', borderRadius: '10px', border: '2px solid #e1e5ea', width: '100%', fontSize: '15px', fontFamily: 'Poppins, sans-serif', background: '#f8f9fb' }}
+                    style={{ padding: '12px 16px', borderRadius: '10px', width: '100%', fontSize: '15px' }}
                   >
                     <option value="">Select Grade</option>
                     <option value="A+">A+</option>
@@ -375,7 +375,7 @@ const EditStudent = () => {
                   <label>Urdu Grade</label>
                   <select 
                     {...register("gradeUrdu")}
-                    style={{ padding: '12px 16px', borderRadius: '10px', border: '2px solid #e1e5ea', width: '100%', fontSize: '15px', fontFamily: 'Poppins, sans-serif', background: '#f8f9fb' }}
+                    style={{ padding: '12px 16px', borderRadius: '10px', width: '100%', fontSize: '15px' }}
                   >
                     <option value="">Select Grade</option>
                     <option value="A+">A+</option>
@@ -393,7 +393,7 @@ const EditStudent = () => {
                   <label>Islamiat Grade</label>
                   <select 
                     {...register("gradeIslamiat")}
-                    style={{ padding: '12px 16px', borderRadius: '10px', border: '2px solid #e1e5ea', width: '100%', fontSize: '15px', fontFamily: 'Poppins, sans-serif', background: '#f8f9fb' }}
+                    style={{ padding: '12px 16px', borderRadius: '10px', width: '100%', fontSize: '15px' }}
                   >
                     <option value="">Select Grade</option>
                     <option value="A+">A+</option>
@@ -411,7 +411,7 @@ const EditStudent = () => {
                   <label>Computer Science Grade</label>
                   <select 
                     {...register("gradeComputer")}
-                    style={{ padding: '12px 16px', borderRadius: '10px', border: '2px solid #e1e5ea', width: '100%', fontSize: '15px', fontFamily: 'Poppins, sans-serif', background: '#f8f9fb' }}
+                    style={{ padding: '12px 16px', borderRadius: '10px', width: '100%', fontSize: '15px' }}
                   >
                     <option value="">Select Grade</option>
                     <option value="A+">A+</option>
@@ -431,7 +431,6 @@ const EditStudent = () => {
                     placeholder="Enter complete address"
                     rows="3"
                     {...register("address")}
-                    style={{ padding: '0.8rem', borderRadius: '8px', border: '1px solid #ddd', width: '100%', fontSize: '1rem', resize: 'vertical' }}
                   ></textarea>
                 </div>
 

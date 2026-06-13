@@ -112,7 +112,7 @@ const StudentProfile = () => {
               <p>Enter student details to search</p>
             </div>
             {isAdmin && (
-              <a href="/add-student" style={{ 
+              <Link to="/add-student" style={{ 
                 backgroundColor: 'var(--brand)', 
                 color: 'white', 
                 padding: '0.8rem 1.5rem', 
@@ -128,7 +128,7 @@ const StudentProfile = () => {
               onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'var(--brand)'}
               >
                 <FaUserPlus /> Add New Student
-              </a>
+              </Link>
             )}
           </div>
 

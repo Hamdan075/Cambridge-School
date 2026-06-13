@@ -25,7 +25,7 @@ const Navbar = () => {
   
   <div className="nav-links">
     {navLinks.map(nav => (
-      <NavLink to={nav.link} key={nav._id} className="link">{nav.id}</NavLink>
+      <NavLink to={nav.link} key={nav._id || nav.id} className="link">{nav.id}</NavLink>
     ))}
     {isAdmin ? (
       <button onClick={handleLogout} className="link" style={{ background: 'transparent', border: 'none', color: 'inherit', font: 'inherit', cursor: 'pointer', padding: 0 }}>Logout</button>
@@ -34,18 +34,18 @@ const Navbar = () => {
     )}
   </div>
   
-  <div className="menu-icons">
+  <div className="menu-icons" aria-label="Toggle navigation menu" role="button" tabIndex={0}>
     <FaBars onClick={() => setToggle(prev => !prev)} />
   </div>
   
   <div className={`${toggle ? 'show' : 'hidden'}`}>
     {navLinks.map(nav => (
-      <NavLink to={nav.link} key={nav._id}>{nav.id}</NavLink>
+      <NavLink to={nav.link} key={nav._id || nav.id} onClick={() => setToggle(false)}>{nav.id}</NavLink>
     ))}
     {isAdmin ? (
-      <button onClick={handleLogout} style={{ background: 'transparent', border: 'none', color: 'inherit', font: 'inherit', cursor: 'pointer', padding: 0, display: 'block', margin: '1rem 0' }}>Logout</button>
+      <button onClick={() => { handleLogout(); setToggle(false); }} style={{ background: 'transparent', border: 'none', color: 'inherit', font: 'inherit', cursor: 'pointer', padding: 0, display: 'block', margin: '1rem 0' }}>Logout</button>
     ) : (
-      <NavLink to="/admin-login">Admin</NavLink>
+      <NavLink to="/admin-login" onClick={() => setToggle(false)}>Admin</NavLink>
     )}
   </div>
 </nav>

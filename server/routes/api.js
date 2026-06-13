@@ -262,7 +262,7 @@ router.post('/auth/login', async (req, res) => {
     // Sign Token
     const token = jwt.sign(
       { id: admin._id, email: admin.email },
-      process.env.JWT_SECRET || 'cambridge_fallback_secret_key_123',
+      process.env.JWT_SECRET,
       { expiresIn: '24h' }
     );
 

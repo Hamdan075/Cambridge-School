@@ -13,8 +13,14 @@ import Facility from "./routes/Facility";
 import Admission from "./routes/Admission";
 import Contact from "./routes/Contact";
 import StudentProfile from "./routes/StudentProfile";
+import AddStudent from "./routes/AddStudent";
+import EditStudent from "./routes/EditStudent";
+import AdminLogin from "./routes/AdminLogin";
 
 import RootLayout from "./layouts/RootLayout";
+
+import { SiteProvider } from "./context/SiteContext";
+import { AuthProvider } from "./context/AuthContext";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -33,12 +39,6 @@ const router = createBrowserRouter(
     </Route>
   )
 );
-
-import { SiteProvider } from "./context/SiteContext";
-import { AuthProvider } from "./context/AuthContext";
-import AddStudent from "./routes/AddStudent";
-import EditStudent from "./routes/EditStudent";
-import AdminLogin from "./routes/AdminLogin";
 
 const App = () => {
   return ( 
