@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { NavLink, useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
 import { 
   FaUserPlus, 
   FaSearch, 

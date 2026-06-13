@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { submitContactForm } from '../api';
+import { submitContact } from '../api';
 import { FaPaperPlane, FaCheckCircle, FaSpinner, FaExclamationCircle } from 'react-icons/fa';
 import './Forms.css';
-import { submitContact } from '../api';
 
 const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);

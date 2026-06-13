@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaCheckCircle, FaExclamationCircle, FaSpinner } from 'react-icons/fa';
-import { submitAdmission, submitApplication } from '../api';
+import { submitAdmission } from '../api';
 import './Forms.css';
 
 const ApplyNow = () => {
