@@ -35,39 +35,63 @@ const AdminLogin = () => {
             <p>Please log in to access admin features.</p>
           </div>
 
-          {error && (
-            <div style={{ backgroundColor: '#f8d7da', color: '#721c24', padding: '1rem', borderRadius: '8px', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <FaExclamationCircle /> {error}
-            </div>
-          )}
+          <div style={{ padding: '0 40px 40px' }}>
+            {error && (
+              <div style={{ backgroundColor: '#f8d7da', color: '#721c24', padding: '1rem', borderRadius: '8px', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <FaExclamationCircle /> {error}
+              </div>
+            )}
 
-          <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <div className="search-field">
-              <label>Email Address</label>
-              <input 
-                type="email" 
-                placeholder="Admin Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            
-            <div className="search-field">
-              <label>Password</label>
-              <input 
-                type="password" 
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
+            <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1.8rem' }}>
+              <div className="search-field">
+                <label style={{ fontSize: '11px', letterSpacing: '1px', textTransform: 'uppercase', color: 'var(--text-secondary)', fontWeight: 600, display: 'block', marginBottom: '8px' }}>Email Address</label>
+                <input 
+                  type="email" 
+                  placeholder="Admin Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '14px 18px',
+                    background: 'rgba(255, 255, 255, 0.03)',
+                    border: '1px solid var(--glass-border)',
+                    borderRadius: '10px',
+                    color: 'var(--text-primary)',
+                    outline: 'none',
+                    fontSize: '15px',
+                    transition: 'all 0.3s ease'
+                  }}
+                  required
+                />
+              </div>
+              
+              <div className="search-field">
+                <label style={{ fontSize: '11px', letterSpacing: '1px', textTransform: 'uppercase', color: 'var(--text-secondary)', fontWeight: 600, display: 'block', marginBottom: '8px' }}>Password</label>
+                <input 
+                  type="password" 
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '14px 18px',
+                    background: 'rgba(255, 255, 255, 0.03)',
+                    border: '1px solid var(--glass-border)',
+                    borderRadius: '10px',
+                    color: 'var(--text-primary)',
+                    outline: 'none',
+                    fontSize: '15px',
+                    transition: 'all 0.3s ease'
+                  }}
+                  required
+                />
+              </div>
 
-            <button type="submit" className="search-btn" style={{ width: '100%', justifyContent: 'center', marginTop: '1rem' }}>
-              Login
-            </button>
-          </form>
+              <button type="submit" className="search-btn" style={{ width: '100%', justifyContent: 'center', marginTop: '1.8rem', padding: '14px 32px' }}>
+                Login
+              </button>
+            </form>
+          </div>
         </div>
       </section>
 
