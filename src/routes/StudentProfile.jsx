@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import { NavLink, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
-import { FaUserPlus, FaSearch, FaUserCircle, FaGraduationCap, FaMedal, FaClipboardList, FaSpinner, FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
-import './StudentProfile.css';
-import { useState, useContext } from "react";
-import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
-import { searchStudents, deleteStudent } from "../api";
-import { AuthContext } from "../context/AuthContext";
 import { 
-  FaUserGraduate, 
+  FaUserPlus, 
   FaSearch, 
+  FaUserCircle, 
+  FaGraduationCap, 
+  FaMedal, 
+  FaClipboardList, 
+  FaSpinner, 
+  FaCheckCircle, 
+  FaExclamationCircle,
+  FaUserGraduate, 
   FaIdBadge, 
   FaBookOpen, 
   FaCalendarAlt, 
@@ -18,13 +19,14 @@ import {
   FaEnvelope, 
   FaTrophy, 
   FaChartLine, 
-  FaUserPlus, 
   FaEdit, 
   FaTrashAlt, 
-  FaCheckCircle, 
-  FaExclamationCircle,
   FaArrowLeft
-} from "react-icons/fa";
+} from 'react-icons/fa';
+import './StudentProfile.css';
+import Footer from "../components/Footer";
+import { searchStudents, deleteStudent } from "../api";
+import { AuthContext } from "../context/AuthContext";
 
 const StudentProfile = () => {
   const [searchName, setSearchName] = useState("");
