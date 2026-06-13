@@ -49,8 +49,9 @@ const ApplyNow = () => {
 
       {/* Firstname */}
       <div className={`input-box ${errors.firstname ? 'has-error' : ''}`}>
-        <label>Firstname *</label>
+        <label htmlFor="firstname">Firstname *</label>
         <input
+          id="firstname"
           type="text"
           {...register('firstname', {
             required: 'First name is required',
@@ -67,8 +68,9 @@ const ApplyNow = () => {
 
       {/* Lastname */}
       <div className={`input-box ${errors.lastname ? 'has-error' : ''}`}>
-        <label>Lastname *</label>
+        <label htmlFor="lastname">Lastname *</label>
         <input
+          id="lastname"
           type="text"
           {...register('lastname', {
             required: 'Last name is required',
@@ -85,8 +87,9 @@ const ApplyNow = () => {
 
       {/* Gender */}
       <div className={`input-box ${errors.gender ? 'has-error' : ''}`}>
-        <label>Gender *</label>
+        <label htmlFor="gender">Gender *</label>
         <select
+          id="gender"
           style={{
             width: '100%',
             border: 0,
@@ -113,8 +116,9 @@ const ApplyNow = () => {
 
       {/* Email */}
       <div className={`input-box ${errors.email ? 'has-error' : ''}`}>
-        <label>Email *</label>
+        <label htmlFor="email">Email *</label>
         <input
+          id="email"
           type="email"
           {...register('email', {
             required: 'Email is required',
@@ -129,8 +133,9 @@ const ApplyNow = () => {
 
       {/* Phone */}
       <div className={`input-box ${errors.phone ? 'has-error' : ''}`}>
-        <label>Phone Number *</label>
+        <label htmlFor="phone">Phone Number *</label>
         <input
+          id="phone"
           type="text"
           {...register('phone', {
             required: 'Phone number is required',
@@ -145,8 +150,9 @@ const ApplyNow = () => {
 
       {/* Nationality */}
       <div className={`input-box ${errors.nationality ? 'has-error' : ''}`}>
-        <label>Nationality *</label>
+        <label htmlFor="nationality">Nationality *</label>
         <input
+          id="nationality"
           type="text"
           {...register('nationality', {
             required: 'Nationality is required',
@@ -162,8 +168,9 @@ const ApplyNow = () => {
 
       {/* State */}
       <div className={`input-box ${errors.state ? 'has-error' : ''}`}>
-        <label>State *</label>
+        <label htmlFor="state">State *</label>
         <input
+          id="state"
           type="text"
           {...register('state', {
             required: 'State is required',
@@ -175,8 +182,9 @@ const ApplyNow = () => {
 
       {/* Address */}
       <div className={`input-box ${errors.address ? 'has-error' : ''}`}>
-        <label>Home Address *</label>
+        <label htmlFor="address">Home Address *</label>
         <input
+          id="address"
           type="text"
           {...register('address', {
             required: 'Home address is required',
@@ -188,8 +196,9 @@ const ApplyNow = () => {
 
       {/* How did you know about us */}
       <div className={`input-box ${errors.howKnow ? 'has-error' : ''}`}>
-        <label>How did you know about us *</label>
+        <label htmlFor="how-know">How did you know about us *</label>
         <textarea
+          id="how-know"
           {...register('howKnow', {
             required: 'This field is required',
             minLength: { value: 5, message: 'Please provide at least 5 characters' },

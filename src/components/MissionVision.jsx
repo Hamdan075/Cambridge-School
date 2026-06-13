@@ -13,7 +13,7 @@ const MissionVision = () => {
 
   return (
     <div className='content'>
-      <h1 ref={titleRef} className="scroll-hidden">Our Mission and Vision</h1>
+      <h2 ref={titleRef} className="scroll-hidden">Our Mission and Vision</h2>
       <div className="mission-vision">
         {data.map((missVis, i) => (
           <div className="missVis scroll-hidden" key={missVis._id} ref={cardRefs[i]}>

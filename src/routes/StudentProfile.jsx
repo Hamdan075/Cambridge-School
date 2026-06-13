@@ -98,7 +98,7 @@ const StudentProfile = () => {
       {/* Hero Banner */}
       <div className="pages student-hero">
         <FaUserGraduate className="student-hero-icon" />
-        <p className="title">Student Profile</p>
+        <h1 className="title">Student Profile</h1>
         <p className="student-hero-sub">Search and view student information</p>
       </div>
 

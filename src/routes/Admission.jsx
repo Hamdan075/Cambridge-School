@@ -12,7 +12,7 @@ const Admission = () => {
   return (
     <>
       <div className="pages admission">
-        <h2 className="title">Admission</h2>
+        <h1 className="title">Admission</h1>
       </div>
       <div ref={infoRef} className="scroll-hidden">
         <AdmissionInfo />

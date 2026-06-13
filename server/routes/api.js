@@ -17,6 +17,7 @@ const Program = require('../models/Program');
 const Admin = require('../models/Admin');
 
 const verifyToken = require('../middleware/auth');
+const { loginLimiter, formLimiter } = require('../middleware/rateLimiter');
 
 // GET /api/navlinks
 router.get('/navlinks', async (req, res) => {
@@ -143,7 +144,7 @@ router.post('/students', verifyToken, async (req, res) => {
 });
 
 // POST /api/contact — Save contact us message
-router.post('/contact', async (req, res) => {
+router.post('/contact', formLimiter, async (req, res) => {
   try {
     const ContactMessage = require('../models/ContactMessage');
     const newMessage = new ContactMessage(req.body);
@@ -155,7 +156,7 @@ router.post('/contact', async (req, res) => {
 });
 
 // POST /api/admission — Save admission application
-router.post('/admission', async (req, res) => {
+router.post('/admission', formLimiter, async (req, res) => {
   try {
     const AdmissionApplication = require('../models/AdmissionApplication');
     const newApp = new AdmissionApplication(req.body);
@@ -240,7 +241,7 @@ router.delete('/students/:id', verifyToken, async (req, res) => {
 });
 
 // POST /api/auth/login — Admin Login
-router.post('/auth/login', async (req, res) => {
+router.post('/auth/login', loginLimiter, async (req, res) => {
   try {
     const { email, password } = req.body;
     if (!email || !password) {

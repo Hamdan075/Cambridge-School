@@ -74,7 +74,7 @@ const AddStudent = () => {
     <>
       <div className="pages student-hero">
         <FaUserPlus className="student-hero-icon" />
-        <p className="title">Add New Student</p>
+        <h1 className="title">Add New Student</h1>
         <p className="student-hero-sub">Register a new student into the database</p>
       </div>
 
@@ -104,9 +104,10 @@ const AddStudent = () => {
           <form onSubmit={handleSubmit(onSubmit)} className="student-search-form" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
             
             <div className="search-field">
-              <label>Full Name *</label>
+              <label htmlFor="student-name">Full Name *</label>
               <input 
                 type="text" 
+                id="student-name"
                 placeholder="e.g. John Doe"
                 {...register("name", { required: "Name is required" })}
                 style={{ borderColor: errors.name ? 'red' : '' }}
@@ -115,9 +116,10 @@ const AddStudent = () => {
             </div>
 
             <div className="search-field">
-              <label>Father's Name *</label>
+              <label htmlFor="student-fatherName">Father's Name *</label>
               <input 
                 type="text" 
+                id="student-fatherName"
                 placeholder="e.g. Richard Doe"
                 {...register("fatherName", { required: "Father's name is required" })}
                 style={{ borderColor: errors.fatherName ? 'red' : '' }}
@@ -126,9 +128,10 @@ const AddStudent = () => {
             </div>
 
             <div className="search-field">
-              <label>Roll Number *</label>
+              <label htmlFor="student-rollNo">Roll Number *</label>
               <input 
                 type="number" 
+                id="student-rollNo"
                 placeholder="e.g. 101"
                 {...register("rollNo", { required: "Roll number is required" })}
                 style={{ borderColor: errors.rollNo ? 'red' : '' }}
@@ -138,9 +141,10 @@ const AddStudent = () => {
 
             <div className="search-field" style={{ display: 'flex', gap: '1rem' }}>
               <div style={{ flex: 1 }}>
-                <label>Class *</label>
+                <label htmlFor="student-class">Class *</label>
                 <input 
                   type="number" 
+                  id="student-class"
                   placeholder="e.g. 10"
                   {...register("class", { required: "Class is required" })}
                   style={{ borderColor: errors.class ? 'red' : '' }}
@@ -148,9 +152,10 @@ const AddStudent = () => {
                 {errors.class && <span style={{ color: 'red', fontSize: '0.8rem' }}>{errors.class.message}</span>}
               </div>
               <div style={{ flex: 1 }}>
-                <label>Section *</label>
+                <label htmlFor="student-section">Section *</label>
                 <input 
                   type="text" 
+                  id="student-section"
                   placeholder="e.g. A"
                   {...register("section", { required: "Section is required" })}
                   style={{ borderColor: errors.section ? 'red' : '' }}
@@ -160,9 +165,10 @@ const AddStudent = () => {
             </div>
 
             <div className="search-field">
-              <label>Date of Birth *</label>
+              <label htmlFor="student-dateOfBirth">Date of Birth *</label>
               <input 
                 type="date"
+                id="student-dateOfBirth"
                 {...register("dateOfBirth", { required: "Date of birth is required" })}
                 style={{ borderColor: errors.dateOfBirth ? 'red' : '' }}
               />
@@ -170,8 +176,9 @@ const AddStudent = () => {
             </div>
 
             <div className="search-field">
-              <label>Gender *</label>
+              <label htmlFor="student-gender">Gender *</label>
               <select 
+                id="student-gender"
                 {...register("gender", { required: "Gender is required" })}
                 style={{ padding: '12px 16px', borderRadius: '10px', border: errors.gender ? '2px solid red' : '', width: '100%', fontSize: '15px' }}
               >
@@ -184,18 +191,20 @@ const AddStudent = () => {
             </div>
 
             <div className="search-field">
-              <label>Phone Number</label>
+              <label htmlFor="student-phone">Phone Number</label>
               <input 
                 type="text" 
+                id="student-phone"
                 placeholder="e.g. +92 300 1234567"
                 {...register("phone")}
               />
             </div>
 
             <div className="search-field">
-              <label>Email Address</label>
+              <label htmlFor="student-email">Email Address</label>
               <input 
                 type="email" 
+                id="student-email"
                 placeholder="e.g. student@example.com"
                 {...register("email", {
                   pattern: {
@@ -208,18 +217,20 @@ const AddStudent = () => {
             </div>
 
             <div className="search-field">
-              <label>Blood Group</label>
+              <label htmlFor="student-bloodGroup">Blood Group</label>
               <input 
                 type="text" 
+                id="student-bloodGroup"
                 placeholder="e.g. O+"
                 {...register("bloodGroup")}
               />
             </div>
 
             <div className="search-field">
-              <label>Admission Date</label>
+              <label htmlFor="student-admissionDate">Admission Date</label>
               <input 
                 type="date"
+                id="student-admissionDate"
                 {...register("admissionDate")}
               />
             </div>
@@ -231,9 +242,10 @@ const AddStudent = () => {
             </div>
 
             <div className="search-field">
-              <label>Attendance (%)</label>
+              <label htmlFor="student-attendance">Attendance (%)</label>
               <input 
                 type="number" 
+                id="student-attendance"
                 placeholder="e.g. 95"
                 {...register("attendance", { 
                   min: { value: 0, message: "Attendance cannot be less than 0" },
@@ -245,9 +257,10 @@ const AddStudent = () => {
             </div>
 
             <div className="search-field">
-              <label>Achievements (comma-separated)</label>
+              <label htmlFor="student-achievements">Achievements (comma-separated)</label>
               <input 
                 type="text" 
+                id="student-achievements"
                 placeholder="e.g. Sports Captain, Math Olympiad Winner"
                 {...register("achievements")}
               />
@@ -260,8 +273,9 @@ const AddStudent = () => {
             </div>
 
             <div className="search-field">
-              <label>English Grade</label>
+              <label htmlFor="grade-english">English Grade</label>
               <select 
+                id="grade-english"
                 {...register("gradeEnglish")}
                 style={{ padding: '12px 16px', borderRadius: '10px', width: '100%', fontSize: '15px' }}
               >
@@ -278,8 +292,9 @@ const AddStudent = () => {
             </div>
 
             <div className="search-field">
-              <label>Mathematics Grade</label>
+              <label htmlFor="grade-maths">Mathematics Grade</label>
               <select 
+                id="grade-maths"
                 {...register("gradeMaths")}
                 style={{ padding: '12px 16px', borderRadius: '10px', width: '100%', fontSize: '15px' }}
               >
@@ -296,8 +311,9 @@ const AddStudent = () => {
             </div>
 
             <div className="search-field">
-              <label>Science Grade</label>
+              <label htmlFor="grade-science">Science Grade</label>
               <select 
+                id="grade-science"
                 {...register("gradeScience")}
                 style={{ padding: '12px 16px', borderRadius: '10px', width: '100%', fontSize: '15px' }}
               >
@@ -314,8 +330,9 @@ const AddStudent = () => {
             </div>
 
             <div className="search-field">
-              <label>Urdu Grade</label>
+              <label htmlFor="grade-urdu">Urdu Grade</label>
               <select 
+                id="grade-urdu"
                 {...register("gradeUrdu")}
                 style={{ padding: '12px 16px', borderRadius: '10px', width: '100%', fontSize: '15px' }}
               >
@@ -332,8 +349,9 @@ const AddStudent = () => {
             </div>
 
             <div className="search-field">
-              <label>Islamiat Grade</label>
+              <label htmlFor="grade-islamiat">Islamiat Grade</label>
               <select 
+                id="grade-islamiat"
                 {...register("gradeIslamiat")}
                 style={{ padding: '12px 16px', borderRadius: '10px', width: '100%', fontSize: '15px' }}
               >
@@ -350,8 +368,9 @@ const AddStudent = () => {
             </div>
 
             <div className="search-field">
-              <label>Computer Science Grade</label>
+              <label htmlFor="grade-computer">Computer Science Grade</label>
               <select 
+                id="grade-computer"
                 {...register("gradeComputer")}
                 style={{ padding: '12px 16px', borderRadius: '10px', width: '100%', fontSize: '15px' }}
               >
@@ -368,9 +387,10 @@ const AddStudent = () => {
             </div>
 
             <div className="search-field" style={{ gridColumn: '1 / -1' }}>
-              <label>Home Address</label>
+              <label htmlFor="student-address">Home Address</label>
               <textarea 
                 placeholder="Enter complete address"
+                id="student-address"
                 rows="3"
                 {...register("address")}
               ></textarea>

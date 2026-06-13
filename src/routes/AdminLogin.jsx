@@ -28,7 +28,7 @@ const AdminLogin = () => {
     <>
       <div className="pages" style={{ minHeight: '300px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
         <FaLock style={{ fontSize: '4rem', color: 'white', marginBottom: '1rem' }} />
-        <h2 className="title">Admin Login</h2>
+        <h1 className="title">Admin Login</h1>
       </div>
 
       <section style={{ display: 'flex', justifyContent: 'center', padding: '4rem 2rem' }}>
@@ -47,9 +47,10 @@ const AdminLogin = () => {
 
             <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1.8rem' }}>
               <div className="search-field">
-                <label style={{ fontSize: '11px', letterSpacing: '1px', textTransform: 'uppercase', color: 'var(--text-secondary)', fontWeight: 600, display: 'block', marginBottom: '8px' }}>Email Address</label>
+                <label htmlFor="admin-email" style={{ fontSize: '11px', letterSpacing: '1px', textTransform: 'uppercase', color: 'var(--text-secondary)', fontWeight: 600, display: 'block', marginBottom: '8px' }}>Email Address</label>
                 <input 
                   type="email" 
+                  id="admin-email"
                   placeholder="Admin Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -69,9 +70,10 @@ const AdminLogin = () => {
               </div>
               
               <div className="search-field">
-                <label style={{ fontSize: '11px', letterSpacing: '1px', textTransform: 'uppercase', color: 'var(--text-secondary)', fontWeight: 600, display: 'block', marginBottom: '8px' }}>Password</label>
+                <label htmlFor="admin-password" style={{ fontSize: '11px', letterSpacing: '1px', textTransform: 'uppercase', color: 'var(--text-secondary)', fontWeight: 600, display: 'block', marginBottom: '8px' }}>Password</label>
                 <input 
                   type="password" 
+                  id="admin-password"
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}

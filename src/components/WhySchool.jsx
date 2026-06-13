@@ -7,7 +7,7 @@ const WhySchool = () => {
 
   return (
     <div className="content">
-      <h1>Why Cambridge?</h1>
+      <h2>Why Cambridge?</h2>
       <div className="reasons">
         {data.map(reason => (
           <div className="reason" key={reason._id}>

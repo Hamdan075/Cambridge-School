@@ -709,7 +709,8 @@ body {
   padding: 0 20px;
 }
 
-.content h1 {
+.content h1,
+.content h2 {
   position: relative;
   text-align: center;
   margin: 40px 0 50px;
@@ -722,7 +723,8 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.content h1::after {
+.content h1::after,
+.content h2::after {
   position: absolute;
   content: '';
   top: calc(100% + 12px);
@@ -1132,7 +1134,8 @@ footer .col h2 {
     display: block;
   }
 
-  .content h1 {
+  .content h1,
+  .content h2 {
     font-size: 1.8rem;
   }
 }
@@ -1203,7 +1206,8 @@ footer .col h2 {
   padding: 0;
 }
 
-.about-info .vc-office h1 {
+.about-info .vc-office h1,
+.about-info .vc-office h2 {
   font-family: var(--font-display);
   color: var(--gold-shiny);
   font-size: 2.2rem;

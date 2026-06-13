@@ -50,6 +50,7 @@ const ContactForm = () => {
         <div className={`input-box ${errors.name ? 'has-error' : ''}`}>
           <input 
             placeholder='Full Name *'
+            aria-label='Full Name'
             {...register("name", {
               required: "Name is required",
               minLength: {
@@ -73,6 +74,7 @@ const ContactForm = () => {
           <input 
             placeholder='Email Address *'
             type="email"
+            aria-label='Email Address'
             {...register("email", {
               required: "Email is required",
               pattern: {
@@ -87,6 +89,7 @@ const ContactForm = () => {
         <div className={`input-box ${errors.subject ? 'has-error' : ''}`}>
           <input 
             placeholder='Subject *'
+            aria-label='Subject'
             {...register("subject", {
               required: "Subject is required",
               minLength: {
@@ -105,6 +108,7 @@ const ContactForm = () => {
         <div className={`input-box ${errors.message ? 'has-error' : ''}`}>
           <textarea 
             placeholder='Your Message *'
+            aria-label='Your Message'
             rows={30}
             cols={30}
             {...register("message", {
