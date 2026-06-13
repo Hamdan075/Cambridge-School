@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
+const bcrypt = require('bcryptjs');
 
 // Models
 const NavLink = require('./models/NavLink');
@@ -15,6 +16,7 @@ const Facility = require('./models/Facility');
 const MoreInfo = require('./models/MoreInfo');
 const Student = require('./models/Student');
 const Program = require('./models/Program');
+const Admin = require('./models/Admin');
 
 // ─── Seed Data ──────────────────────────────────────────────
 
@@ -226,6 +228,7 @@ async function seed() {
       MoreInfo.deleteMany({}),
       Student.deleteMany({}),
       Program.deleteMany({}),
+      Admin.deleteMany({}),
     ]);
 
     // Insert all data
@@ -233,6 +236,16 @@ async function seed() {
 
     await NavLink.insertMany(navLinksData);
     console.log('  ✓ NavLinks seeded');
+
+    // Seed Admin Account
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash('cam@123', salt);
+    const seedAdmin = new Admin({
+      email: 'hamdanaslam446@gmail.com',
+      password: hashedPassword
+    });
+    await seedAdmin.save();
+    console.log('  ✓ Admin account seeded (hamdanaslam446@gmail.com / cam@123)');
 
     await MissionVision.insertMany(missionVisionData);
     console.log('  ✓ MissionVision seeded');

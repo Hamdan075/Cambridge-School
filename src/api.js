@@ -28,11 +28,17 @@ export const searchStudents = (params) => {
 };
 
 export const addStudent = async (studentData) => {
+  const headers = {
+    'Content-Type': 'application/json',
+  };
+  const token = localStorage.getItem('token');
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
+  }
+
   const response = await fetch(`${API_BASE}/students`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    headers,
     body: JSON.stringify(studentData),
   });
   if (!response.ok) {
@@ -78,11 +84,17 @@ export const fetchStudent = async (id) => {
 };
 
 export const updateStudent = async (id, studentData) => {
+  const headers = {
+    'Content-Type': 'application/json',
+  };
+  const token = localStorage.getItem('token');
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
+  }
+
   const response = await fetch(`${API_BASE}/students/${id}`, {
     method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    headers,
     body: JSON.stringify(studentData),
   });
   if (!response.ok) {
@@ -93,8 +105,15 @@ export const updateStudent = async (id, studentData) => {
 };
 
 export const deleteStudent = async (id) => {
+  const headers = {};
+  const token = localStorage.getItem('token');
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
+  }
+
   const response = await fetch(`${API_BASE}/students/${id}`, {
     method: 'DELETE',
+    headers,
   });
   if (!response.ok) {
     const errorData = await response.json().catch(() => ({}));

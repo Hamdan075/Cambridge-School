@@ -11,13 +11,16 @@ const AdminLogin = () => {
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    const success = login(email, password);
-    if (success) {
-      navigate('/student-profile');
-    } else {
-      setError('Invalid email or password');
+    setError('');
+    try {
+      const success = await login(email, password);
+      if (success) {
+        navigate('/student-profile');
+      }
+    } catch (err) {
+      setError(err.message || 'Invalid email or password');
     }
   };
 

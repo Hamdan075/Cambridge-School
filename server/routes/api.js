@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 const NavLink = require('../models/NavLink');
 const MissionVision = require('../models/MissionVision');
@@ -12,6 +14,9 @@ const Facility = require('../models/Facility');
 const MoreInfo = require('../models/MoreInfo');
 const Student = require('../models/Student');
 const Program = require('../models/Program');
+const Admin = require('../models/Admin');
+
+const verifyToken = require('../middleware/auth');
 
 // GET /api/navlinks
 router.get('/navlinks', async (req, res) => {
@@ -126,8 +131,8 @@ router.get('/students', async (req, res) => {
   }
 });
 
-// POST /api/students — Add a new student
-router.post('/students', async (req, res) => {
+// POST /api/students — Add a new student (Protected)
+router.post('/students', verifyToken, async (req, res) => {
   try {
     const newStudent = new Student(req.body);
     const savedStudent = await newStudent.save();
@@ -204,8 +209,8 @@ router.get('/students/:id', async (req, res) => {
   }
 });
 
-// PUT /api/students/:id — Update a student
-router.put('/students/:id', async (req, res) => {
+// PUT /api/students/:id — Update a student (Protected)
+router.put('/students/:id', verifyToken, async (req, res) => {
   try {
     const updatedStudent = await Student.findByIdAndUpdate(
       req.params.id,
@@ -221,14 +226,47 @@ router.put('/students/:id', async (req, res) => {
   }
 });
 
-// DELETE /api/students/:id — Delete a student
-router.delete('/students/:id', async (req, res) => {
+// DELETE /api/students/:id — Delete a student (Protected)
+router.delete('/students/:id', verifyToken, async (req, res) => {
   try {
     const deletedStudent = await Student.findByIdAndDelete(req.params.id);
     if (!deletedStudent) {
       return res.status(404).json({ error: 'Student not found' });
     }
     res.json({ message: 'Student deleted successfully' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// POST /api/auth/login — Admin Login
+router.post('/auth/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return res.status(400).json({ error: 'Email and password are required' });
+    }
+
+    // Find Admin
+    const admin = await Admin.findOne({ email: email.toLowerCase() });
+    if (!admin) {
+      return res.status(401).json({ error: 'Invalid email or password' });
+    }
+
+    // Check Password
+    const isMatch = await bcrypt.compare(password, admin.password);
+    if (!isMatch) {
+      return res.status(401).json({ error: 'Invalid email or password' });
+    }
+
+    // Sign Token
+    const token = jwt.sign(
+      { id: admin._id, email: admin.email },
+      process.env.JWT_SECRET || 'cambridge_fallback_secret_key_123',
+      { expiresIn: '24h' }
+    );
+
+    res.json({ token, email: admin.email });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
