@@ -213,20 +213,8 @@ const ApplyNow = () => {
       <button
         type="submit"
         disabled={isSubmitting}
-        style={{
-          padding: '12px 28px',
-          background: '#01187b',
-          border: 0,
-          color: '#fff',
-          marginTop: '20px',
-          borderRadius: '8px',
-          fontSize: '15px',
-          fontWeight: 600,
-          fontFamily: 'Poppins, sans-serif',
-          cursor: 'pointer',
-          transition: 'all 0.3s ease',
-          opacity: isSubmitting ? 0.7 : 1,
-        }}
+        className="btn btn-primary"
+        style={{ marginTop: '20px' }}
       >
         {isSubmitting ? 'Submitting...' : 'Apply Now'}
       </button>

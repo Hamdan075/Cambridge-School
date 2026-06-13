@@ -127,7 +127,7 @@ const ContactForm = () => {
         </div>
 
         <button 
-          id='btn'
+          className='btn btn-primary'
           type='submit'
           disabled={isSubmitting}
         >{isSubmitting ? 'Sending...' : 'Send Message'}</button>

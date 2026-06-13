@@ -120,21 +120,7 @@ const StudentProfile = () => {
               <p>Enter student details to search</p>
             </div>
             {isAdmin && (
-              <Link to="/add-student" style={{ 
-                backgroundColor: 'var(--brand)', 
-                color: 'white', 
-                padding: '0.8rem 1.5rem', 
-                borderRadius: '8px', 
-                textDecoration: 'none', 
-                display: 'flex', 
-                alignItems: 'center', 
-                gap: '0.5rem',
-                fontWeight: 'bold',
-                transition: 'background-color 0.3s'
-              }}
-              onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'var(--text-color)'}
-              onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'var(--brand)'}
-              >
+              <Link to="/add-student" className="btn btn-primary">
                 <FaUserPlus /> Add New Student
               </Link>
             )}
@@ -216,7 +202,7 @@ const StudentProfile = () => {
           ) : foundStudent ? (
             <>
               {searchResults.length > 1 && (
-                <button onClick={() => setFoundStudent(null)} className="search-btn" style={{ marginBottom: '1.5rem', alignSelf: 'flex-start', padding: '0.6rem 1.2rem', display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255, 255, 255, 0.1)', border: '1px solid var(--glass-border)', color: 'white' }}>
+                <button onClick={() => setFoundStudent(null)} className="btn btn-secondary" style={{ marginBottom: '1.5rem', alignSelf: 'flex-start' }}>
                   <FaArrowLeft /> Back to Results
                 </button>
               )}
@@ -238,42 +224,10 @@ const StudentProfile = () => {
 
                   {isAdmin && (
                     <div className="profile-actions" style={{ display: 'flex', gap: '10px' }}>
-                      <Link to={`/edit-student/${foundStudent._id}`} style={{ 
-                        padding: '0.6rem 1.2rem', 
-                        backgroundColor: 'rgba(255, 255, 255, 0.2)', 
-                        color: 'white',
-                        border: '1px solid rgba(255, 255, 255, 0.4)',
-                        borderRadius: '8px',
-                        textDecoration: 'none',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                        fontWeight: 'bold',
-                        fontSize: '0.9rem',
-                        transition: 'background-color 0.3s'
-                      }}
-                      onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.3)'}
-                      onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.2)'}
-                      >
+                      <Link to={`/edit-student/${foundStudent._id}`} className="btn btn-secondary">
                         <FaEdit /> Edit
                       </Link>
-                      <button onClick={handleDelete} style={{ 
-                        padding: '0.6rem 1.2rem', 
-                        backgroundColor: '#dc2626', 
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '8px',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                        fontWeight: 'bold',
-                        fontSize: '0.9rem',
-                        transition: 'background-color 0.3s'
-                      }}
-                      onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#b91c1c'}
-                      onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#dc2626'}
-                      >
+                      <button onClick={handleDelete} className="btn btn-danger">
                         <FaTrashAlt /> Delete
                       </button>
                     </div>
@@ -425,7 +379,7 @@ const StudentProfile = () => {
                         Class: <strong style={{ color: 'var(--text-primary)' }}>{student.class}-{student.section}</strong> | Roll No: <strong style={{ color: 'var(--text-primary)' }}>{student.rollNo}</strong>
                       </p>
                     </div>
-                    <button onClick={() => setFoundStudent(student)} className="search-btn" style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem' }}>
+                    <button onClick={() => setFoundStudent(student)} className="btn btn-primary">
                       View Profile
                     </button>
                   </div>

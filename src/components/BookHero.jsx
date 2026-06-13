@@ -139,7 +139,7 @@ const BookHero = () => {
             <p className="info">
               We are delighted to have you visit our virtual home - a place where knowledge thrives, dreams soar, and friendships flourish. At Cambridge school, we believe in cultivating an environment that fosters academic excellence, nurtures creativity, and embraces diversity.
             </p>
-            <NavLink to="/about" className="explore-btn">
+            <NavLink to="/about" className="btn btn-primary" style={{ marginTop: '20px' }}>
               Explore Our Campus
             </NavLink>
           </div>

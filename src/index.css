@@ -13,7 +13,7 @@
   --glass-bg-hover: rgba(255, 255, 255, 0.1);
   --glass-border: rgba(255, 255, 255, 0.08);
   --text-primary: #f3f4f6;
-  --text-secondary: #9ca3af;
+  --text-secondary: #d1d5db;
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-display: 'Cinzel', serif;
   --font-sans: 'Outfit', 'Poppins', sans-serif;
@@ -26,6 +26,79 @@
   text-decoration: none;
   box-sizing: border-box;
   font-family: var(--font-sans);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--gold-shiny);
+  outline-offset: 2px;
+}
+
+/* --- STANDARD BUTTON STYLES --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-family: var(--font-sans);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--brand-light), var(--brand));
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(1, 24, 123, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 15px 35px rgba(1, 24, 123, 0.6),
+    0 0 20px var(--gold-glow);
+  border-color: var(--gold);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-danger {
+  background: #dc2626;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+}
+
+.btn-danger:hover {
+  background: #b91c1c;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.4);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 body {
@@ -679,33 +752,9 @@ body {
   z-index: 1;
 }
 
-.home a {
-  background: linear-gradient(135deg, var(--brand-light), var(--brand));
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 15px 40px;
-  color: #fff;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  box-shadow: 0 10px 25px rgba(1, 24, 123, 0.4);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  display: inline-block;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.home a:hover {
-  transform: translateY(-5px);
-  box-shadow: 
-    0 15px 35px rgba(1, 24, 123, 0.6),
-    0 0 20px var(--gold-glow);
-  border-color: var(--gold);
-}
 
 .content {
-  margin-top: 80px;
+  margin: 100px 0;
   padding: 0 20px;
 }
 
@@ -741,8 +790,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
-  margin-top: 40px;
-  margin-bottom: 80px;
+  margin: 60px 0 100px;
 }
 
 .missVis {
@@ -882,7 +930,7 @@ body {
   display: flex;
   max-width: 850px;
   height: 360px;
-  margin: 40px auto 80px;
+  margin: 60px auto 100px;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -1138,6 +1186,24 @@ footer .col h2 {
   .content h2 {
     font-size: 1.8rem;
   }
+
+  .content,
+  .mission-vision,
+  .testimonials,
+  .about-info,
+  .contact-us {
+    margin: 40px auto;
+  }
+
+  .content {
+    padding: 0 15px;
+  }
+
+  .about-info,
+  .facilities,
+  .contact-us {
+    padding: 40px 15px;
+  }
 }
 
 @media (max-width: 400px) {
@@ -1191,9 +1257,9 @@ footer .col h2 {
 .about-info {
   display: flex;
   justify-content: space-between;
-  padding: 60px 40px;
+  padding: 80px 40px;
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 100px auto;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--glass-border);
   border-radius: 24px;
@@ -1314,7 +1380,7 @@ footer .col h2 {
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
-  padding: 60px 20px;
+  padding: 100px 20px;
 }
 
 .facilities .facility {
@@ -1382,9 +1448,9 @@ footer .col h2 {
 }
 
 .contact-us {
-  padding: 60px 40px;
+  padding: 80px 40px;
   max-width: 1200px;
-  margin: 40px auto 80px;
+  margin: 60px auto 100px;
   display: flex;
   justify-content: space-between;
   gap: 50px;
@@ -1488,28 +1554,6 @@ footer .col h2 {
   color: rgba(255, 255, 255, 0.35) !important;
 }
 
-#btn {
-  padding: 14px 32px;
-  background: linear-gradient(135deg, var(--gold), var(--gold-shiny));
-  color: var(--bg-darker);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50px;
-  margin-top: 15px;
-  cursor: pointer;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
-}
-
-#btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 
-    0 12px 25px rgba(212, 175, 55, 0.45),
-    0 0 15px rgba(212, 175, 55, 0.2);
-  border-color: #fff;
-}
 
 @media (max-width: 500px) {
   .contact-us {
