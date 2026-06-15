@@ -5,7 +5,7 @@ import { AuthContext } from '../context/AuthContext';
 import { addStudent } from '../api';
 import Footer from '../components/Footer';
 import StudentForm from '../components/StudentForm';
-import { FaArrowLeft, FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
+import { FaArrowLeft, FaCheckCircle, FaExclamationCircle, FaUserPlus } from 'react-icons/fa';
 
 const AddStudent = () => {
   const navigate = useNavigate();

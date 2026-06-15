@@ -9,8 +9,8 @@ const WhySchool = () => {
     <div className="content">
       <h2>Why Cambridge?</h2>
       <div className="reasons">
-        {data.map(reason => (
-          <div className="reason" key={reason._id}>
+        {data.map((reason, index) => (
+          <div className="reason" key={reason._id || index}>
             <div className="icon">
               {getIcon(reason.icon)}
             </div>

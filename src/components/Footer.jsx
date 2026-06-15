@@ -40,8 +40,8 @@ const Footer = () => {
         </div>
         <div className="col second-col">
             <h2>Links</h2>
-            {navLinks.map(link => (
-                <ul key={link._id}>
+            {navLinks.map((link, index) => (
+                <ul key={link._id || index}>
                     <li>
                         <NavLink to={`/${link.link}`}>
                             <FaAngleRight /> {link.id}
@@ -52,14 +52,14 @@ const Footer = () => {
         </div>
         <div className="col third-col">
             <h2>Contact us</h2>
-            {footerContact.map(contact => (
-                <ul key={contact._id}>
+            {footerContact.map((contact, index) => (
+                <ul key={contact._id || index}>
                     <li>{contact.text}</li>
                 </ul>
             ))}
             <div className="contNum">
-                {footerContactNum.map(msg => (
-                    <ul key={msg._id}>
+                {footerContactNum.map((msg, index) => (
+                    <ul key={msg._id || index}>
                         <li><div className="icon">{getIcon(msg.icon)}</div>{msg.text}</li>
                     </ul>
                 ))}

@@ -16,7 +16,7 @@ const MissionVision = () => {
       <h2 ref={titleRef} className="scroll-hidden">Our Mission and Vision</h2>
       <div className="mission-vision">
         {data.map((missVis, i) => (
-          <div className="missVis scroll-hidden" key={missVis._id} ref={cardRefs[i]}>
+          <div className="missVis scroll-hidden" key={missVis._id || i} ref={cardRefs[i]}>
             <div className="icons">
               {getIcon(missVis.icon)}
             </div>

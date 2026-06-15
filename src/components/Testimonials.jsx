@@ -41,7 +41,7 @@ const Testimonials = () => {
             position = "lastslide";
           }
           return (
-            <article className={position} key={_id}>
+            <article className={position} key={_id || indexTest}>
               <img src={image} alt={name} />
               <h3>{name}</h3>
               <p>{testimonial}</p>
