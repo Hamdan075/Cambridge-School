@@ -111,7 +111,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
-  background: linear-gradient(rgba(2, 5, 11, 0.85), rgba(2, 5, 11, 0.85)), url('./assets/image2.jpg') no-repeat center/cover;
+  background: linear-gradient(rgba(2, 5, 11, 0.85), rgba(2, 5, 11, 0.85)), url('../assets/image2.jpg') no-repeat center/cover;
   background-attachment: fixed;
   width: 100%;
   padding: 80px 40px;
@@ -332,7 +332,7 @@ article h4 {
   justify-content: center;
   flex-direction: column;
   height: 280px;
-  background: linear-gradient(to bottom, rgba(2, 5, 11, 0.8), rgba(6, 11, 24, 0.95)), url('./assets/image5.jpg') no-repeat center/cover;
+  background: linear-gradient(to bottom, rgba(2, 5, 11, 0.8), rgba(6, 11, 24, 0.95)), url('../assets/image5.jpg') no-repeat center/cover;
   background-attachment: fixed;
   width: 100%;
   border-bottom: 2px solid var(--gold);
@@ -485,7 +485,7 @@ article h4 {
 }
 
 .fac {
-  background: linear-gradient(rgba(2, 5, 11, 0.8), rgba(2, 5, 11, 0.85)), url('./assets/image8.jpg') no-repeat center/cover;
+  background: linear-gradient(rgba(2, 5, 11, 0.8), rgba(2, 5, 11, 0.85)), url('../assets/image8.jpg') no-repeat center/cover;
 }
 
 .facilities {
@@ -540,7 +540,7 @@ article h4 {
 }
 
 .contact {
-  background: linear-gradient(rgba(2, 5, 11, 0.8), rgba(2, 5, 11, 0.85)), url('./assets/image17.jpg') no-repeat center/cover;
+  background: linear-gradient(rgba(2, 5, 11, 0.8), rgba(2, 5, 11, 0.85)), url('../assets/image17.jpg') no-repeat center/cover;
 }
 
 .map {
@@ -676,7 +676,7 @@ article h4 {
 }
 
 .admission {
-  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('./assets/image25.jpg') no-repeat center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../assets/image25.jpg') no-repeat center/cover;
 }
 
 .ad-info,
@@ -781,7 +781,7 @@ article h4 {
 .error h1 {
   font-size: 150px;
   margin: 0;
-  background: url('./assets/image23.jpg') no-repeat center/cover;
+  background: url('../assets/image23.jpg') no-repeat center/cover;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
