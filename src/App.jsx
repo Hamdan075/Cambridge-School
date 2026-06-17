@@ -19,6 +19,7 @@ const EditStudent = lazy(() => import("./routes/EditStudent"));
 const AdminLogin = lazy(() => import("./routes/AdminLogin"));
 const UserLogin = lazy(() => import("./routes/UserLogin"));
 const UserRegister = lazy(() => import("./routes/UserRegister"));
+const AuthPortal = lazy(() => import("./routes/AuthPortal"));
 
 import RootLayout from "./layouts/RootLayout";
 
@@ -40,6 +41,7 @@ const router = createBrowserRouter(
       <Route path="admin-login" element={<AdminLogin />} />
       <Route path="login" element={<UserLogin />} />
       <Route path="register" element={<UserRegister />} />
+      <Route path="portal" element={<AuthPortal />} />
       <Route path="*" element={<Error />} />
     </Route>
   )

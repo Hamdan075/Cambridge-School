@@ -31,11 +31,7 @@ const Navbar = () => {
     {isAdmin || isUser ? (
       <button onClick={handleLogout} className="link" style={{ background: 'transparent', border: 'none', color: 'inherit', font: 'inherit', cursor: 'pointer', padding: 0 }}>Logout</button>
     ) : (
-      <>
-        <NavLink to="/login" className="link">Login</NavLink>
-        <NavLink to="/register" className="link">Register</NavLink>
-        <NavLink to="/admin-login" className="link">Admin</NavLink>
-      </>
+      <NavLink to="/portal" className="link">Portal</NavLink>
     )}
   </div>
   
@@ -50,11 +46,7 @@ const Navbar = () => {
     {isAdmin || isUser ? (
       <button onClick={() => { handleLogout(); setToggle(false); }} style={{ background: 'transparent', border: 'none', color: 'inherit', font: 'inherit', cursor: 'pointer', padding: 0, display: 'block', margin: '1rem 0' }}>Logout</button>
     ) : (
-      <>
-        <NavLink to="/login" onClick={() => setToggle(false)}>Login</NavLink>
-        <NavLink to="/register" onClick={() => setToggle(false)}>Register</NavLink>
-        <NavLink to="/admin-login" onClick={() => setToggle(false)}>Admin</NavLink>
-      </>
+      <NavLink to="/portal" onClick={() => setToggle(false)}>Portal</NavLink>
     )}
   </div>
 </nav>
